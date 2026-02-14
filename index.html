@@ -9,19 +9,104 @@
     
     <link rel="stylesheet" href="final.css">
 
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a5f1477b-ead4-4c46-a161-78bde7c58b5f" data-blockingmode="auto" type="text/javascript"></script>
-    
     <style>
         /* Додаткові стилі, яких немає в Tailwind */
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
-        .video-overlay { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .video-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
         
-        /* Скролбар */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        /* Cookie Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #111827;
+            color: #f9fafb;
+            padding: 1rem;
+            z-index: 9999;
+            border-top: 1px solid #374151;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .cookie-banner-text {
+            flex: 1;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .cookie-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .cookie-btn:hover {
+            background: #2563eb;
+        }
+        .cookie-btn-secondary {
+            background: transparent;
+            color: #9ca3af;
+            border: 1px solid #4b5563;
+        }
+        .cookie-btn-secondary:hover {
+            background: #374151;
+            color: #f9fafb;
+        }
+        
+        /* Dark mode for cookie banner */
+        .dark .cookie-banner {
+            background: #f9fafb;
+            color: #111827;
+            border-top-color: #6b7280;
+        }
+        .dark .cookie-btn-secondary {
+            color: #9ca3af;
+            border-color: #6b7280;
+        }
+        .dark .cookie-btn-secondary:hover {
+            background: #374151;
+            color: #f9fafb;
+        }
     </style>
 
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
@@ -31,6 +116,19 @@
     <link rel="manifest" href="site.webmanifest" />
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                Diese Website verwendet Cookies für die beste Benutzererfahrung. Durch die Nutzung der Website stimmen Sie der Verwendung von Cookies zu.
+            </div>
+            <div class="cookie-banner-buttons">
+                <button id="accept-cookies" class="cookie-btn">Akzeptieren</button>
+                <button id="decline-cookies" class="cookie-btn cookie-btn-secondary">Ablehnen</button>
+            </div>
+        </div>
+    </div>
     
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md">Zum Hauptinhalt springen</a>
     
@@ -571,6 +669,40 @@
                 btn.disabled = false;
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+            
+            // Check if user already consented
+            if (!localStorage.getItem('cookieConsent')) {
+                // Show banner after a short delay
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000);
+                
+                // Accept cookies
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookieBanner.classList.remove('show');
+                    
+                    // You can add analytics or other cookie-dependent scripts here
+                    console.log('Cookies accepted');
+                });
+                
+                // Decline cookies
+                declineBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    cookieBanner.classList.remove('show');
+                    
+                    console.log('Cookies declined');
+                });
+            } else {
+                // Hide banner if already decided
+                cookieBanner.style.display = 'none';
+            }
+        });
 
         if(form) form.addEventListener("submit", handleSubmit);
     </script>
