@@ -4,57 +4,9 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="robots" content="noindex, nofollow">
-    <title>Datenschutz - Sebastian Video Creator</title>
+    <title>Datenschutz - Sebastian Wendt Video Creator</title>
     <link href="fonts/fonts.css" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#3b82f6",
-                        "background-light": "#f3f4f6",
-                        "background-dark": "#000000",
-                        "surface-dark": "#0a0a0a",
-                        "text-light": "#111827",
-                        "text-dark": "#f9fafb",
-                        "muted-light": "#6b7280",
-                        "muted-dark": "#9ca3af",
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        display: ["Oswald", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.25rem",
-                    },
-                },
-            },
-        };
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 0.05em;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #000;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="final.css">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md">Zum Hauptinhalt springen</a>
@@ -64,7 +16,7 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
                     <a class="text-3xl font-bold font-display uppercase tracking-widest text-black dark:text-white" href="index.html" aria-label="Sebastian - Zur Startseite">
-                        SE<span class="text-primary">BASTIAN</span>
+                        SEBASTIAN<span class="text-primary"> WENDT</span>
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
@@ -97,9 +49,13 @@
             <div class="mt-auto">
                 <p class="text-sm text-muted-dark uppercase tracking-widest mb-4">Follow Me</p>
                 <div class="flex space-x-6">
-                    <span class="material-icons" aria-hidden="true">camera_alt</span>
-                    <span class="material-icons" aria-hidden="true">play_circle</span>
-                </div>
+                            <a class="text-gray-900 dark:text-white hover:text-primary transition-colors" href="https://www.youtube.com/@Sebastian_Wendt" aria-label="YouTube">
+                                <span class="material-icons" aria-hidden="true">play_circle</span>
+                            </a> 
+                            <a class="text-gray-900 dark:text-white hover:text-primary transition-colors" href="https://www.linkedin.com/in/sebastiansvennicholas-wendt/" aria-label="LinkedIn">
+                                <span class="material-icons" aria-hidden="true">work</span>
+                            </a> 
+                        </div>
             </div>
         </div>
     </div>
@@ -111,91 +67,128 @@
             </h1>
             
             <div class="space-y-8 text-lg text-muted-light dark:text-muted-dark">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Datenschutz&shy;erkl&auml;rung</h2>
+                
                 <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Einleitung</h2>
-                    <p>Wir freuen uns über Ihr Interesse an meiner Webseite. Der Schutz Ihrer persönlichen Daten ist mir ein sehr wichtiges Anliegen. Nachfolgend informiere ich Sie über die Verarbeitung Ihrer personenbezogenen Daten bei der Nutzung meiner Webseite.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Verantwortliche Stelle</h2>
-                    <div class="space-y-2">
-                        <p><strong>Sebastian [Nachname]</strong></p>
-                        <p>[Straße Hausnummer]</p>
-                        <p>[PLZ] Hamburg</p>
-                        <p>Deutschland</p>
-                        <p>E-Mail: [email@example.com]</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Datenerfassung auf dieser Webseite</h2>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">1. Datenschutz auf einen Blick</h3>
                     
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">Server-Log-Dateien</h3>
-                    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Allgemeine Hinweise</h4>
+                    <p>Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgef&uuml;hrten Datenschutzerkl&auml;rung.</p>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Datenerfassung auf dieser Website</h4>
+                    
+                    <h5 class="text-base font-medium text-gray-900 dark:text-white mt-3 mb-2">Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser Website?</h5>
+                    <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.</p>
+                    
+                    <h5 class="text-base font-medium text-gray-900 dark:text-white mt-3 mb-2">Wie erfassen wir Ihre Daten?</h5>
+                    <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                    <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+                    
+                    <h5 class="text-base font-medium text-gray-900 dark:text-white mt-3 mb-2">Wof&uuml;r nutzen wir Ihre Daten?</h5>
+                    <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern &uuml;ber die Website Vertr&auml;ge geschlossen oder angebahnt werden k&ouml;nnen, werden die &uuml;bermittelten Daten auch f&uuml;r Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.</p>
+                    
+                    <h5 class="text-base font-medium text-gray-900 dark:text-white mt-3 mb-2">Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h5>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben au&szlig;erdem ein Recht, die Berichtigung oder L&ouml;schung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die Zukunft widerrufen. Au&szlig;erdem haben Sie das Recht, unter bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde zu.</p>
+                    <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">2. Hosting</h3>
+                    <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">IONOS</h4>
+                    <p>Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (nachfolgend IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerkl&auml;rung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://www.ionos.de/terms-gtc/terms-privacy</a>.</p>
+                    <p>Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
+
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Auftragsverarbeitung</h4>
+                    <p>Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gew&auml;hrleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">3. Allgemeine Hinweise und Pflicht&shy;informationen</h3>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Datenschutz</h4>
+                    <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p>
+                    <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie und zu welchem Zweck das geschieht.</p>
+                    <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Hinweis zur verantwortlichen Stelle</h4>
+                    <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:</p>
+                    <p>Sebastian Wendt<br />
+                    Sonnenau 2<br />
+                    22089 Hamburg</p>
+
+                    <p>Telefon: +49 160 92378048<br />
+                    E-Mail: mail@wendt-videos.de</p>
+                    <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
+<h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Auskunft, Berichtigung und L&ouml;schung</h4>
+                    <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Recht auf Einschr&auml;nkung der Verarbeitung</h4>
+                    <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p>
                     <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                        <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li>
+                        <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                        <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                    </ul>
+                    <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">4. Datenerfassung auf dieser Website</h3>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Cookies</h4>
+                    <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt.</p>
+                    <p>Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p>
+                    <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p>
+                    <p>Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.</p>
+                    <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p>
+                    <p>Welche Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dieser Datenschutzerkl&auml;rung entnehmen.</p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">5. Analyse-Tools und Werbung</h3>
+                    
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">IONOS WebAnalytics</h4>
+                    <p>Diese Website nutzt die Analysedienste von IONOS WebAnalytics (im Folgenden: IONOS). Anbieter ist die 1&amp;1 IONOS SE, Elgendorfer Stra&szlig;e 57, D &ndash; 56410 Montabaur. Im Rahmen der Analysen mit IONOS k&ouml;nnen u.&nbsp;a. Besucherzahlen und &ndash;verhalten (z.&nbsp;B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Zu diesem Zweck speichert IONOS insbesondere folgende Daten:</p>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Referrer (zuvor besuchte Webseite)</li>
+                        <li>angeforderte Webseite oder Datei</li>
                         <li>Browsertyp und Browserversion</li>
                         <li>verwendetes Betriebssystem</li>
-                        <li>Referrer URL</li>
-                        <li>Hostname des zugreifenden Rechners</li>
-                        <li>Uhrzeit der Serveranfrage</li>
-                        <li>IP-Adresse (in anonymisierter Form)</li>
+                        <li>verwendeter Ger&auml;tetyp</li>
+                        <li>Uhrzeit des Zugriffs</li>
+                        <li>IP-Adresse in anonymisierter Form (wird nur zur Feststellung des Orts des Zugriffs verwendet)</li>
                     </ul>
-                    <p class="mt-3">Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht in der technisch fehlerfreien Darstellung und der Optimierung unserer Webseite.</p>
+                    <p>Die Datenerfassung erfolgt laut IONOS vollst&auml;ndig anonymisiert, sodass sie nicht zu einzelnen Personen zur&uuml;ckverfolgt werden kann. Cookies werden von IONOS WebAnalytics nicht gespeichert.</p>
+                    <p>Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der statistischen Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
+                    <p>Weitere Informationen zur Datenerfassung und Verarbeitung durch IONOS WebAnalytics entnehmen Sie der Datenschutzerklaerung von IONOS unter folgendem Link: <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://www.ionos.de/terms-gtc/datenschutzerklaerung/</a></p>
 
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">Kontaktformular</h3>
-                    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-                    <p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
-                    <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">Auftragsverarbeitung</h4>
+                    <p>Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gew&auml;hrleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Cookies</h2>
-                    <p>Unsere Webseite verwendet keine Cookies zur Speicherung von personenbezogenen Daten. Es werden ausschließlich technisch notwendige Cookies für die grundlegende Funktionalität der Webseite verwendet.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Externe Dienste</h2>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">6. Plugins und Tools</h3>
                     
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">YouTube</h3>
-                    <p>Unsere Webseite nutzt Plugins des von Google LLC betriebenen Videoportals YouTube. Wenn Sie eine Seite mit einem YouTube-Plugin besuchen, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie besucht haben.</p>
-                    <p>Wenn Sie in Ihrem YouTube-Account eingeloggt sind, ermöglichen Sie YouTube, Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen. Dies können Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.</p>
-                    <p>Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.</p>
-                    <p>Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von YouTube unter: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline" aria-label="Externer Link: Google Privacy Policy">https://policies.google.com/privacy</a></p>
-
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">Google Fonts</h3>
-                    <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google LLC bereitgestellt werden. Die Google Fonts sind lokal eingebunden, es wird keine Verbindung zu Servern von Google hergestellt.</p>
+                    <h4 class="text-lg font-medium text-gray-900 dark:text-white mt-4 mb-2">YouTube mit erweitertem Datenschutz</h4>
+                    <p>Diese Website bindet Videos der Website YouTube ein. Betreiber der Website ist die Google Ireland Limited (&bdquo;Google&rdquo;), Gordon House, Barrow Street, Dublin 4, Irland.</p>
+                    <p>Wenn Sie eine dieser Website besuchen, auf denen YouTube eingebunden ist, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Wenn Sie in Ihrem YouTube-Account eingeloggt sind, erm&ouml;glichen Sie YouTube, Ihr Surfverhalten direkt Ihrem pers&ouml;nlichen Profil zuzuordnen. Dies k&ouml;nnen Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.</p>
+                    <p>Wir nutzen YouTube im erweiterten Datenschutzmodus. Videos, die im erweiterten Datenschutzmodus abgespielt werden, werden nach Aussage von YouTube nicht zur Personalisierung des Surfens auf YouTube eingesetzt. Anzeigen, die im erweiterten Datenschutzmodus ausgespielt werden, sind ebenfalls nicht personalisiert. Im erweiterten Datenschutzmodus werden keine Cookies gesetzt. Stattdessen werden jedoch sogenannte Local Storage Elemente im Browser des Users gespeichert, die &auml;hnlich wie Cookies personenbezogene Daten beinhalten und zur Wiedererkennung eingesetzt werden k&ouml;nnen. Details zum erweiterten Datenschutzmodus finden Sie hier: <a href="https://support.google.com/youtube/answer/171780" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://support.google.com/youtube/answer/171780</a>.</p>
+                    <p>Gegebenenfalls k&ouml;nnen nach der Aktivierung eines YouTube-Videos weitere Datenverarbeitungsvorg&auml;nge ausgel&ouml;st werden, auf die wir keinen Einfluss haben.</p>
+                    <p>Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
+                    <p>Weitere Informationen &uuml;ber Datenschutz bei YouTube finden Sie in deren Datenschutzerkl&auml;rung unter: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://policies.google.com/privacy?hl=de</a>.</p>
+                    <p>Das Unternehmen verf&uuml;gt &uuml;ber eine Zertifizierung nach dem &bdquo;EU-US Data Privacy Framework&ldquo; (DPF). Der DPF ist ein &Uuml;bereinkommen zwischen der Europ&auml;ischen Union und den USA, der die Einhaltung europ&auml;ischer Datenschutzstandards bei Datenverarbeitungen in den USA gew&auml;hrleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link: <a href="https://www.dataprivacyframework.gov/participant/5780" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://www.dataprivacyframework.gov/participant/5780</a>.</p>
+                    <p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://www.e-recht24.de</a></p>
                 </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Ihre Rechte als betroffene Person</h2>
-                    <p>Sie haben folgende Rechte gemäß Art. 15 DSGVO:</p>
-                    <ul class="list-disc pl-6 mt-2 space-y-1">
-                        <li><strong>Auskunftsrecht:</strong> Sie können Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten verlangen.</li>
-                        <li><strong>Recht auf Berichtigung:</strong> Sie haben das Recht, die Berichtigung unrichtiger personenbezogener Daten zu verlangen.</li>
-                        <li><strong>Recht auf Löschung:</strong> Unter bestimmten Voraussetzungen können Sie die Löschung Ihrer personenbezogenen Daten verlangen.</li>
-                        <li><strong>Recht auf Einschränkung der Verarbeitung:</strong> Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
-                        <li><strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Ihre personenbezogenen Daten zu erhalten und diese an einen anderen Verantwortlichen weiterzugeben.</li>
-                        <li><strong>Widerspruchsrecht:</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Dauer der Speicherung</h2>
-                    <p>Die Speicherungsdauer richtet sich nach der gesetzlichen Aufbewahrungsfrist (z. B. 10 Jahre für steuerrelevante Unterlagen) und dem jeweiligen Verarbeitungszweck. Nach Ablauf der Speicherungsdauer werden die entsprechenden Daten gelöscht, sofern sie nicht mehr für die Vertragserfüllung oder Vertragsgestaltung erforderlich sind.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 uppercase">Aktualität dieser Datenschutzerklärung</h2>
-                    <p>Diese Datenschutzerklärung ist aktuell Stand: Januar 2026</p>
-                    <p>Durch die Weiterentwicklung unserer Webseite und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Version finden Sie auf dieser Webseite.</p>
-                </section>
-            </div>
-        </div>
+                    </div>
     </main>
 
     <footer class="bg-white dark:bg-black text-gray-900 dark:text-white pt-24 pb-12 border-t border-gray-200 dark:border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-light dark:text-muted-dark">
+                <p> 2026 Sebastian. Alle Rechte vorbehalten.</p>
                 <p>© 2026 Sebastian. Alle Rechte vorbehalten.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a class="hover:text-white transition-colors" href="impressum.html">Impressum</a>
