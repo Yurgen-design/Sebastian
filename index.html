@@ -421,7 +421,8 @@
         </div>
     </footer>
 
-    <div id="notification-toast" class="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-surface-dark border-l-4 border-primary shadow-2xl rounded-r-sm p-6 flex items-start gap-4 transition-all duration-500 transform translate-y-10 opacity-0 pointer-events-none">
+    <!-- Notification Toast -->
+    <div id="notification-toast" class="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-surface-dark border-l-4 border-primary shadow-2xl rounded-r-sm p-6 flex items-start gap-4 transition-all duration-500 transform translate-y-[200%] opacity-0 pointer-events-none">
         <div class="flex-shrink-0 text-primary">
             <span class="material-icons text-3xl">check_circle</span>
         </div>
@@ -599,24 +600,35 @@
             }
         });
 
-        // === 5. ОБРОБКА ФОРМИ & POP-UP (Виправлена логіка) ===
+        // === 5. ОБРОБКА ФОРМИ & POP-UP (ВИПРАВЛЕНО) ===
         const form = document.getElementById("contact-form");
         const toast = document.getElementById("notification-toast");
         let toastTimeout;
 
         function showToast() {
-            // Тепер працює, бо ми прибрали style="..." з HTML
-            toast.classList.remove("translate-y-10", "opacity-0", "pointer-events-none");
+            console.log('showToast called'); // Для дебагу
             
+            // Прибираємо всі класи, що ховають елемент
+            toast.classList.remove("translate-y-[200%]", "opacity-0", "pointer-events-none");
+            toast.classList.add("translate-y-0", "opacity-100");
+            
+            // Автоматично ховаємо через 5 секунд
             toastTimeout = setTimeout(() => {
                 hideToast();
-            }, 3000);
+            }, 5000);
 
-            document.addEventListener('click', handleOutsideClick);
+            // Закриття по кліку поза межами
+            setTimeout(() => {
+                document.addEventListener('click', handleOutsideClick);
+            }, 100);
         }
 
         function hideToast() {
-            toast.classList.add("translate-y-10", "opacity-0", "pointer-events-none");
+            console.log('hideToast called'); // Для дебагу
+            
+            toast.classList.remove("translate-y-0", "opacity-100");
+            toast.classList.add("translate-y-[200%]", "opacity-0", "pointer-events-none");
+            
             document.removeEventListener('click', handleOutsideClick);
             clearTimeout(toastTimeout);
         }
@@ -643,14 +655,15 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
+                    console.log('Form submitted successfully'); // Для дебагу
                     form.reset();
-                    showToast(); // Викликаємо поп-ап
+                    showToast(); // Показуємо поп-ап
                     btn.innerText = originalBtnText;
                     btn.disabled = false;
                     status.classList.add("hidden"); 
                 } else {
                     response.json().then(data => {
-                        if (Object.hasOwnProperty(data, 'errors')) {
+                        if (Object.hasOwnProperty.call(data, 'errors')) {
                             status.innerText = data["errors"].map(error => error["message"]).join(", ");
                         } else {
                             status.innerText = "Hoppla! Beim Senden ist ein Fehler aufgetreten.";
@@ -662,6 +675,7 @@
                     })
                 }
             }).catch(error => {
+                console.error('Form submission error:', error); // Для дебагу
                 status.innerText = "Hoppla! Beim Senden ist ein Fehler aufgetreten.";
                 status.classList.remove("hidden");
                 status.style.color = "#ef4444";
@@ -670,36 +684,34 @@
             });
         }
 
+        // === 6. COOKIE BANNER ===
         document.addEventListener('DOMContentLoaded', function() {
             const cookieBanner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('accept-cookies');
             const declineBtn = document.getElementById('decline-cookies');
             
-            // Check if user already consented
+            // Перевіряємо, чи користувач вже прийняв/відхилив cookies
             if (!localStorage.getItem('cookieConsent')) {
-                // Show banner after a short delay
+                // Показуємо банер після короткої затримки
                 setTimeout(() => {
                     cookieBanner.classList.add('show');
                 }, 1000);
                 
-                // Accept cookies
+                // Прийняти cookies
                 acceptBtn.addEventListener('click', function() {
                     localStorage.setItem('cookieConsent', 'accepted');
                     cookieBanner.classList.remove('show');
-                    
-                    // You can add analytics or other cookie-dependent scripts here
                     console.log('Cookies accepted');
                 });
                 
-                // Decline cookies
+                // Відхилити cookies
                 declineBtn.addEventListener('click', function() {
                     localStorage.setItem('cookieConsent', 'declined');
                     cookieBanner.classList.remove('show');
-                    
                     console.log('Cookies declined');
                 });
             } else {
-                // Hide banner if already decided
+                // Ховаємо банер, якщо рішення вже прийнято
                 cookieBanner.style.display = 'none';
             }
         });
