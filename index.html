@@ -3,14 +3,16 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a5f1477b-ead4-4c46-a161-78bde7c58b5f" data-blockingmode="auto" type="text/javascript"></script>
+
     <title>Portfolio Videocreator Sebastian Wendt</title>
     
     <link href="fonts/fonts.css" rel="stylesheet"/>
-    
     <link rel="stylesheet" href="final.css">
-
+    
     <style>
-        /* Додаткові стилі, яких немає в Tailwind */
+        /* Додаткові стилі */
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -22,93 +24,26 @@
         .video-overlay {
             background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* === ВИПРАВЛЕНИЙ POP-UP (Стилі для повідомлення про успішну відправку) === */
+        #notification-toast {
+            transform: translateY(200%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease-in-out;
+            display: flex !important; 
         }
-        ::-webkit-scrollbar-track {
-            background: #000;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        
-        /* Cookie Banner Styles */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #111827;
-            color: #f9fafb;
-            padding: 1rem;
-            z-index: 9999;
-            border-top: 1px solid #374151;
-            transform: translateY(100%);
-            transition: transform 0.3s ease-out;
-        }
-        .cookie-banner.show {
+        #notification-toast.show {
             transform: translateY(0);
-        }
-        .cookie-banner-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        .cookie-banner-text {
-            flex: 1;
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-        .cookie-banner-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .cookie-btn {
-            background: #3b82f6;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .cookie-btn:hover {
-            background: #2563eb;
-        }
-        .cookie-btn-secondary {
-            background: transparent;
-            color: #9ca3af;
-            border: 1px solid #4b5563;
-        }
-        .cookie-btn-secondary:hover {
-            background: #374151;
-            color: #f9fafb;
-        }
-        
-        /* Dark mode for cookie banner */
-        .dark .cookie-banner {
-            background: #f9fafb;
-            color: #111827;
-            border-top-color: #6b7280;
-        }
-        .dark .cookie-btn-secondary {
-            color: #9ca3af;
-            border-color: #6b7280;
-        }
-        .dark .cookie-btn-secondary:hover {
-            background: #374151;
-            color: #f9fafb;
+            opacity: 1;
+            pointer-events: auto;
         }
     </style>
-
+    
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -116,22 +51,9 @@
     <link rel="manifest" href="site.webmanifest" />
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
-    
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-banner-content">
-            <div class="cookie-banner-text">
-                Diese Website verwendet Cookies für die beste Benutzererfahrung. Durch die Nutzung der Website stimmen Sie der Verwendung von Cookies zu.
-            </div>
-            <div class="cookie-banner-buttons">
-                <button id="accept-cookies" class="cookie-btn">Akzeptieren</button>
-                <button id="decline-cookies" class="cookie-btn cookie-btn-secondary">Ablehnen</button>
-            </div>
-        </div>
-    </div>
-    
+
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md">Zum Hauptinhalt springen</a>
-    
+
     <nav class="fixed w-full z-50 top-0 left-0 bg-white/90 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" role="navigation" aria-label="Hauptnavigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -223,9 +145,7 @@
                     <p class="text-muted-light dark:text-muted-dark max-w-lg">Einblicke in meine Projekten. Von Werbespots bis zu Dokumentationen.</p>
                 </div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                
                 <div class="group cursor-pointer video-trigger" data-video-id="32TiY_fh3TQ">
                     <div class="relative aspect-video overflow-hidden rounded-sm mb-4" style="aspect-ratio: 16/9; overflow: hidden; border-radius: 0.25rem; margin-bottom: 1rem;">
                         <img alt="Abstract dark cinematic scene" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="365 Tage, 340+ Videos.webp"/>
@@ -240,7 +160,6 @@
                         <p class="text-sm uppercase tracking-wide text-muted-light dark:text-muted-dark">Commercial / 2025</p>
                     </div>
                 </div>
-
                 <div class="group cursor-pointer md:mt-16 video-trigger" data-video-id="y445OMUq8rU">
                     <div class="relative aspect-video overflow-hidden rounded-sm mb-4" style="aspect-ratio: 16/9; overflow: hidden; border-radius: 0.25rem; margin-bottom: 1rem;">
                         <img alt="Coffee brewing cinematic shot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="GEWO.webp"/>
@@ -255,7 +174,6 @@
                         <p class="text-sm uppercase tracking-wide text-muted-light dark:text-muted-dark">Commercial / 2024</p>
                     </div>
                 </div>
-
                 <div class="group cursor-pointer video-trigger" data-video-id="zQf6HRfchtc">
                     <div class="relative aspect-video overflow-hidden rounded-sm mb-4" style="aspect-ratio: 16/9; overflow: hidden; border-radius: 0.25rem; margin-bottom: 1rem;">
                         <img alt="Urban night scene" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="Jubilaum.webp"/>
@@ -270,7 +188,6 @@
                         <p class="text-sm uppercase tracking-wide text-muted-light dark:text-muted-dark">Commercial / 2025</p>
                     </div>
                 </div>
-
                 <div class="group cursor-pointer md:mt-16 video-trigger" data-video-id="AQVsMGcaAyo">
                     <div class="relative aspect-video overflow-hidden rounded-sm mb-4" style="aspect-ratio: 16/9; overflow: hidden; border-radius: 0.25rem; margin-bottom: 1rem;">
                         <img alt="Technology and future concept" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="Roma.webp"/>
@@ -286,14 +203,12 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 
     <section class="py-24 bg-white dark:bg-black" id="services">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
                 <div class="lg:sticky lg:top-28 h-fit">
                     <h2 class="text-4xl md:text-5xl font-bold uppercase leading-tight mb-8 text-gray-900 dark:text-white">
                         AUDIOVISUELLE<br/>
@@ -312,7 +227,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="space-y-8 mt-8 lg:mt-0">
                     <div class="group border-t border-gray-200 dark:border-gray-800 pt-8 transition-all hover:border-primary">
                         <div class="flex justify-between items-start cursor-pointer">
@@ -324,7 +238,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="group border-t border-gray-200 dark:border-gray-800 pt-8 transition-all hover:border-primary">
                         <div class="flex justify-between items-start cursor-pointer">
                             <div>
@@ -335,7 +248,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="group border-t border-gray-200 dark:border-gray-800 pt-8 transition-all hover:border-primary">
                         <div class="flex justify-between items-start cursor-pointer">
                             <div>
@@ -345,8 +257,9 @@
                             </div>
                         </div>
                     </div>
-
-                </div> </div> </div>
+                </div> 
+            </div> 
+        </div>
     </section>
 
     <div id="video-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm">
@@ -357,7 +270,6 @@
             <iframe id="youtube-player" class="w-full h-full rounded-sm shadow-2xl" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
     </main>
 
     <footer class="bg-gray-50 dark:bg-surface-dark text-gray-900 dark:text-white pt-24 pb-12 border-t border-gray-200 dark:border-gray-900" id="contact">
@@ -369,7 +281,6 @@
                         LASST UNS <br/>ETWAS<br/>
                         <span class="text-primary">GROSSARTIGES</span> SCHAFFEN
                     </h2>
-
                     <div>
                         <h3 class="text-sm font-bold uppercase tracking-widest mb-4 text-muted-light dark:text-muted-dark">
                             Socials
@@ -408,9 +319,7 @@
                         <p id="form-status" class="text-center text-sm font-bold mt-4 hidden"></p>
                     </form>
                 </div>
-
             </div>
-
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-light dark:text-muted-dark">
                 <p>© 2026 Sebastian Wendt. Alle Rechte vorbehalten.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
@@ -421,8 +330,7 @@
         </div>
     </footer>
 
-    <!-- Notification Toast -->
-    <div id="notification-toast" class="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-surface-dark border-l-4 border-primary shadow-2xl rounded-r-sm p-6 flex items-start gap-4 transition-all duration-500 transform translate-y-[200%] opacity-0 pointer-events-none">
+    <div id="notification-toast" class="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-surface-dark border-l-4 border-primary shadow-2xl rounded-r-sm p-6 flex items-start gap-4">
         <div class="flex-shrink-0 text-primary">
             <span class="material-icons text-3xl">check_circle</span>
         </div>
@@ -498,9 +406,11 @@
         const startCounters = () => {
             const counters = document.querySelectorAll('.counter');
             const speed = 1000; 
+            
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 const increment = target / (speed / 16); 
+                
                 let currentCount = 0;
                 const updateCount = () => {
                     if (currentCount < target) {
@@ -530,6 +440,7 @@
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
+                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
@@ -539,14 +450,14 @@
                     const dist = targetPos - startPos;
                     let start = null;
                     const duration = 1200;
-
+                    
                     function ease(t, b, c, d) {
                         t /= d / 2;
                         if (t < 1) return c / 2 * t * t * t + b;
                         t -= 2;
                         return c / 2 * (t * t * t + 2) + b;
                     }
-
+                    
                     function anim(time) {
                         if (start === null) start = time;
                         const elapsed = time - start;
@@ -594,25 +505,24 @@
         modal?.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
                 closeModal();
             }
         });
 
-        // === 5. ОБРОБКА ФОРМИ & POP-UP (ВИПРАВЛЕНО) ===
+        // === 5. ОБРОБКА ФОРМИ & POP-UP (Використовуємо новий стабільний код) ===
         const form = document.getElementById("contact-form");
         const toast = document.getElementById("notification-toast");
         let toastTimeout;
 
         function showToast() {
-            console.log('showToast called'); // Для дебагу
-            
-            // Прибираємо всі класи, що ховають елемент
-            toast.classList.remove("translate-y-[200%]", "opacity-0", "pointer-events-none");
-            toast.classList.add("translate-y-0", "opacity-100");
+            // Просто додаємо клас .show, всі анімації в CSS
+            toast.classList.add("show");
             
             // Автоматично ховаємо через 5 секунд
+            clearTimeout(toastTimeout); // Очищаємо попередній таймер, якщо був
             toastTimeout = setTimeout(() => {
                 hideToast();
             }, 5000);
@@ -624,11 +534,7 @@
         }
 
         function hideToast() {
-            console.log('hideToast called'); // Для дебагу
-            
-            toast.classList.remove("translate-y-0", "opacity-100");
-            toast.classList.add("translate-y-[200%]", "opacity-0", "pointer-events-none");
-            
+            toast.classList.remove("show");
             document.removeEventListener('click', handleOutsideClick);
             clearTimeout(toastTimeout);
         }
@@ -644,7 +550,7 @@
             const btn = document.getElementById("submit-button");
             const status = document.getElementById("form-status"); 
             const data = new FormData(event.target);
-
+            
             const originalBtnText = btn.innerText;
             btn.innerText = "Senden...";
             btn.disabled = true;
@@ -655,9 +561,8 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    console.log('Form submitted successfully'); // Для дебагу
                     form.reset();
-                    showToast(); // Показуємо поп-ап
+                    showToast(); // Показуємо поп-ап при успіху
                     btn.innerText = originalBtnText;
                     btn.disabled = false;
                     status.classList.add("hidden"); 
@@ -675,7 +580,7 @@
                     })
                 }
             }).catch(error => {
-                console.error('Form submission error:', error); // Для дебагу
+                console.error('Form submission error:', error);
                 status.innerText = "Hoppla! Beim Senden ist ein Fehler aufgetreten.";
                 status.classList.remove("hidden");
                 status.style.color = "#ef4444";
@@ -684,39 +589,10 @@
             });
         }
 
-        // === 6. COOKIE BANNER ===
-        document.addEventListener('DOMContentLoaded', function() {
-            const cookieBanner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            const declineBtn = document.getElementById('decline-cookies');
-            
-            // Перевіряємо, чи користувач вже прийняв/відхилив cookies
-            if (!localStorage.getItem('cookieConsent')) {
-                // Показуємо банер після короткої затримки
-                setTimeout(() => {
-                    cookieBanner.classList.add('show');
-                }, 1000);
-                
-                // Прийняти cookies
-                acceptBtn.addEventListener('click', function() {
-                    localStorage.setItem('cookieConsent', 'accepted');
-                    cookieBanner.classList.remove('show');
-                    console.log('Cookies accepted');
-                });
-                
-                // Відхилити cookies
-                declineBtn.addEventListener('click', function() {
-                    localStorage.setItem('cookieConsent', 'declined');
-                    cookieBanner.classList.remove('show');
-                    console.log('Cookies declined');
-                });
-            } else {
-                // Ховаємо банер, якщо рішення вже прийнято
-                cookieBanner.style.display = 'none';
-            }
-        });
-
         if(form) form.addEventListener("submit", handleSubmit);
+
+        // === 6. COOKIE BANNER ===
+        // Старий скрипт видалено, так як тепер працює Cookiebot
     </script>
 </body>
 </html>
